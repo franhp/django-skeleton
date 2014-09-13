@@ -55,3 +55,10 @@ target/
 
 # PyCharm
 .idea/
+
+# Eclipse
+.project
+.pydevproject
+
+# Application specific
+default.db
