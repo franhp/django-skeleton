@@ -1,0 +1,8 @@
+Django==1.7
+django-tastypie
+django-bootstrap3
+gevent
+gunicorn
+newrelic
+Fabric
+Sphinx
