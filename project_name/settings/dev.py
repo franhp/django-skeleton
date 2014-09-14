@@ -1,8 +1,9 @@
 """
 Development settings
 """
+from os.path import join, normpath, dirname
 
-from os.path import join, normpath
+import debug_toolbar
 
 from common import *
 
@@ -27,7 +28,19 @@ CACHES = {
     }
 }
 
-# APPS
+
+# debug_toolbar settings
+INTERNAL_IPS = ('127.0.0.1',)
+MIDDLEWARE_CLASSES += (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+)
+
+TEMPLATE_DIRS += (join(dirname(debug_toolbar.__file__), 'templates'),)
+STATICFILES_DIRS += (join(dirname(debug_toolbar.__file__), 'static'),)
+
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False,
+}
 
 THIRD_PARTY_APPS += (
     'debug_toolbar',

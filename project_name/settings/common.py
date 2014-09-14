@@ -80,12 +80,12 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = normpath(join(DJANGO_ROOT, 'static'))
+STATIC_ROOT = normpath(join(DJANGO_ROOT, '../static'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
-    normpath(join(DJANGO_ROOT, 'assets')),
+    normpath(join(DJANGO_ROOT, '../assets')),
 )
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
@@ -97,7 +97,7 @@ STATICFILES_FINDERS = (
 # # FIXTURES # #
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-FIXTURE_DIRS
 FIXTURE_DIRS = (
-    normpath(join(DJANGO_ROOT, 'fixtures')),
+    normpath(join(DJANGO_ROOT, '../fixtures')),
 )
 
 
@@ -132,10 +132,7 @@ TEMPLATE_DIRS = (
 # # MIDDLEWARE SETTINGS # #
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
 MIDDLEWARE_CLASSES = (
-    # Use GZip compression to reduce bandwidth.
-    # 'django.middleware.gzip.GZipMiddleware',
-
-    # Default Django middleware.
+    'djangosecure.middleware.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -172,6 +169,8 @@ THIRD_PARTY_APPS = (
     'tastypie',
     # Easy Twitter bootstrap
     'bootstrap3',
+    # Secure django
+    'djangosecure',
 )
 LOCAL_APPS = (
     'users',

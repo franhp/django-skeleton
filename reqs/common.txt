@@ -1,6 +1,7 @@
 Django==1.7
 django-tastypie
 django-bootstrap3
+django-secure
 gevent
 gunicorn
 newrelic

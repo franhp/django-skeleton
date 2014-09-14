@@ -30,3 +30,8 @@ def runserver():
 @task
 def syncdb():
     local('python manage.py syncdb --settings=project_name.settings.dev --noinput')
+
+
+@task
+def secure():
+    local('python manage.py checksecure')

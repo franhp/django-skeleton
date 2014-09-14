@@ -1,6 +1,8 @@
+import debug_toolbar
+from django.conf import settings
 from django.conf.urls import patterns, include, url
-from django.contrib import admin 
-from django.views.generic.base import TemplateView
+from django.contrib import admin
+
 from project_name.views import HomePageView
 
 
@@ -17,3 +19,7 @@ urlpatterns = patterns('',
     # Homepage
     url(r'^$', HomePageView.as_view(), name='home'),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+                            url(r'^__debug__/', include(debug_toolbar.urls)),)
