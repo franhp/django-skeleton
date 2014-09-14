@@ -18,6 +18,9 @@ urlpatterns = patterns('',
     
     # Homepage
     url(r'^$', HomePageView.as_view(), name='home'),
+    
+    # Oauth2
+    # url(r'^oauth2/', include('provider.oauth2.urls', namespace='oauth2')),
 )
 
 if settings.DEBUG:

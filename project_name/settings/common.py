@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
+from django.conf.global_settings import AUTH_USER_MODEL
 
 
 # # PATH SETTINGS # #
@@ -171,9 +172,11 @@ THIRD_PARTY_APPS = (
     'bootstrap3',
     # Secure django
     'djangosecure',
+    # Oauth2
+    # 'provider',
+    # 'provider.oauth2',
 )
 LOCAL_APPS = (
-    'users',
 )
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

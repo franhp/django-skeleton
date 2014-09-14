@@ -2,6 +2,7 @@ Django==1.7
 django-tastypie
 django-bootstrap3
 django-secure
+django-oauth2-provider
 gevent
 gunicorn
 newrelic

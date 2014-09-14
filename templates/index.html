@@ -1,13 +1,16 @@
+
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 {% block content %}
 
 
-        <h1>Django default site</h1>
+        <h1>{% bootstrap_icon "star" %} Django default site</h1>
 
         <p>Includes:
             <ul>
                 <li>Django 1.7</li>
                 <li>TastyPie</li>
+                <li>Oauth2 (disabled by default)</li>
             </ul>
         </p>
 {% endblock %}
