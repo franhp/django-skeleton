@@ -29,7 +29,7 @@ def runserver():
 
 @task
 def syncdb():
-    local('python manage.py syncdb --settings=project_name.settings.dev --noinput')
+    local('python manage.py syncdb --settings=project_name.settings.dev')
 
 
 @task

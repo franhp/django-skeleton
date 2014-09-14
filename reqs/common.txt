@@ -3,6 +3,7 @@ django-tastypie
 django-bootstrap3
 django-secure
 django-oauth2-provider
+git+https://github.com/macropin/django-registration.git
 gevent
 gunicorn
 newrelic

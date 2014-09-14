@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
-from django.conf.global_settings import AUTH_USER_MODEL
 
 
 # # PATH SETTINGS # #
@@ -71,7 +70,7 @@ USE_TZ = True
 
 # # MEDIA CONFIGURATION # #
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = normpath(join(DJANGO_ROOT, 'media'))
+MEDIA_ROOT = normpath(join(DJANGO_ROOT, '../media'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
 MEDIA_URL = '/media/'
 
@@ -81,12 +80,13 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = normpath(join(DJANGO_ROOT, '../static'))
+STATIC_ROOT = ''
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     normpath(join(DJANGO_ROOT, '../assets')),
+    normpath(join(DJANGO_ROOT, '../static')),
 )
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
@@ -175,9 +175,10 @@ THIRD_PARTY_APPS = (
     # Oauth2
     # 'provider',
     # 'provider.oauth2',
+    # Registration
+    'registration',
 )
-LOCAL_APPS = (
-)
+LOCAL_APPS = ()
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -188,3 +189,6 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # # TEST RUNNER # #
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+# # Registration # #
+ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window;
