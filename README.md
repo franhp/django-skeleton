@@ -1,4 +1,6 @@
-
+[![Coverage Status](https://coveralls.io/repos/franhp/django-skeleton/badge.png)](https://coveralls.io/r/franhp/django-skeleton)
+[![Requirements Status](https://requires.io/github/franhp/django-skeleton/requirements.svg?branch=master)](https://requires.io/github/franhp/django-skeleton/requirements/?branch=master)
+[![Build Status](https://travis-ci.org/franhp/django-skeleton.svg)](https://travis-ci.org/franhp/django-skeleton)
 
 Install
 =======

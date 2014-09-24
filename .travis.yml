@@ -1,0 +1,18 @@
+language: python
+python:
+  - "2.7"
+  - "3.3"
+
+# Install dependencies
+install: "pip install -r reqs/dev.txt"
+
+# Sync database
+before_script:
+  - python manage.py syncdb --noinput
+
+env:
+  - DJANGO_SETTINGS_MODULE='project_name.settings.dev'
+
+# Run tests
+script:
+  - python manage.py test
