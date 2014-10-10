@@ -15,3 +15,7 @@ env:
 # Run tests
 script:
   - python manage.py test
+
+# Coveralls
+after_success:
+  - coveralls
