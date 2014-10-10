@@ -1,5 +1,5 @@
 Django==1.7
-django-tastypie
+git+https://github.com/toastdriven/django-tastypie.git@0.12.0
 django-bootstrap3
 django-secure
 django-oauth2-provider
