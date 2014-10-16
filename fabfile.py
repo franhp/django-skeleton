@@ -2,10 +2,8 @@
 Management commands
 
 """
-import os
 
-from fabric.api import abort, env, local, settings, task
-from fabric.contrib.console import confirm
+from fabric.api import local, task, shell_env
 
 
 # Globals
@@ -17,14 +15,14 @@ HEROKU_CONFIGS = (
 
 @task
 def gunicorn():
-    local("DJANGO_SETTINGS_MODULE='project_name.settings.dev'")
-    local("gunicorn -c gunicorn.ini wsgi:application")
+    with shell_env(DJANGO_SETTINGS_MODULE='project_name.settings.dev'):
+        local("gunicorn -c gunicorn.ini wsgi:application")
 
 
 @task
 def runserver():
-    local("DJANGO_SETTINGS_MODULE='project_name.settings.dev'")
-    local("python manage.py runserver 0.0.0.0:8000")
+    with shell_env(DJANGO_SETTINGS_MODULE='project_name.settings.dev'):
+        local("python manage.py runserver 0.0.0.0:8000")
 
 
 @task
